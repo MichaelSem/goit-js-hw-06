@@ -1,19 +1,17 @@
-const email = document.getElementsByName("email");
-const password = document.getElementsByName("password");
-const button = document.getElementsByTagName("button");
-const form = document.getElementsByClassName("login-form");
+const form = document.querySelector(".login-form");
 
-button[0].addEventListener("click", (event) => {
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
     event.preventDefault();
-    const data = {};
-    data.email = email[0].value;
-    data.password = password[0].value;
-
-    if (!data.email || !data.password) {
-        alert("MINION ALERT")
-    } else {
-        console.log(data);
-        form[0].reset();
+    const {
+      elements: { email, password }
+    } = event.currentTarget;
+  
+    if (email.value === "" || password.value === "") {
+      alert("Please fill in all the fields!");
     }
-    
-});
+  
+    console.log(`Email: ${email.value}, Password: ${password.value}`);
+    event.currentTarget.reset();
+  }

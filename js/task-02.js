@@ -8,10 +8,7 @@ const ingredients = [
 ];
 
 const list = document.getElementById('ingredients');
-for (let index = 0; index < ingredients.length; index++) {
-  let name = ingredients[index];
-  let entry = document.createElement('li');
-  entry.appendChild(document.createTextNode(name));
-  list.appendChild(entry);
-}
-
+const markup = ingredients
+  .map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join("");
+list.insertAdjacentHTML("beforeend", markup)

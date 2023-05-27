@@ -14,13 +14,10 @@ const images = [
 ];
 
 
-var list = document.getElementsByClassName('gallery');
-for (let index = 0; index < images.length; index++) {
-  const entry = document.createElement('li');
-  const image = document.createElement('img');
-  image.src = images[index].url;
-  image.alt = images[index].alt;
-  image.width = "600";
-  entry.append(image)
-  list[0].appendChild(entry);
-}
+const list = document.querySelector(".gallery");
+
+const markup = images
+  .map((image) => `<li><img src = '${image.url}' alt = '${image.alt}'></li>`)
+  .join("");
+list.insertAdjacentHTML("beforeend", markup);
+

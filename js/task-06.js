@@ -1,4 +1,4 @@
-const input = document.querySelector('[data-length="6"');
+const input = document.querySelector('[data-length="6"]');
 const maxLength = 6;
 
 

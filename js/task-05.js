@@ -4,5 +4,6 @@ let message;
 
 nameInput.addEventListener("input", (event) => {
         nameOutput.textContent = event.currentTarget.value;
+});
 
-})
+

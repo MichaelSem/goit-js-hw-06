@@ -7,8 +7,19 @@ const ingredients = [
   'Condiments',
 ];
 
+let line = "";
+
 const list = document.getElementById('ingredients');
-const markup = ingredients
-  .map((ingredient) => `<li class="item">${ingredient}</li>`)
-  .join("");
-list.insertAdjacentHTML("beforeend", markup)
+for (const ingredient of ingredients) {
+  const listItem = document.createElement("li");
+  listItem.className = "item";
+  listItem.append(ingredient);
+  console.log(listItem);
+  line += listItem.outerHTML;
+}
+
+list.insertAdjacentHTML("beforeend", line);
+
+// const markup = ingredients
+//   .map((ingredient) => `<li class="item">${ingredient}</li>`)
+//   .join("");
